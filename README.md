@@ -2,10 +2,10 @@
  
 ---
 
-### **NAME:**  
-### **DEPARTMENT:**  
-### **ROLL NO:**  
-### **DATE OF EXPERIMENT:**  
+### **NAME:**  RAGALA SAI VIVEK
+### **DEPARTMENT:**  BTECH.AIDS
+### **ROLL NO:**  212223230163
+### **DATE OF EXPERIMENT:**  10-03-2025
 
 ---
 
@@ -67,13 +67,35 @@ The sensor measures **temperature using a thermistor** and **humidity using a ca
 
 ## **PROGRAM (MicroPython)**  
 ``` ```
+import dht
+import machine
+import time
 
+# Define DHT22 sensor pin(GPIO PIN)
+dht_pin = machine.Pin(15,machine.Pin.IN,machine.Pin.PULL_UP)
+sensor = dht.DHT22(dht_pin)
+
+while True:
+    try:
+        sensor.measure()
+        temp = sensor.temperature() #Get temperature in Celsius
+        hum = sensor.humidity() #Get humidity
+
+        print(f"Temperature: {temp:.1f} C")
+        print(f"Humidity: {hum:.1f}%")
+
+    except Exception as e:
+        print("Error reading sensor:",e)
+
+    time.sleep(2) # Wait for 2 seconds before next reading
 ---
 
 ## **OUTPUT:**  
  
 ---
+![Screenshot 2025-03-12 211358](https://github.com/user-attachments/assets/5340903f-db9e-40ab-90ce-6a81622e1551)
 
+![Screenshot 2025-03-06 115348](https://github.com/user-attachments/assets/d228f41b-dd85-46c1-9d4f-1aa320984a09)
   
 ---
 
