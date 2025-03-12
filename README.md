@@ -54,6 +54,8 @@ The sensor measures **temperature using a thermistor** and **humidity using a ca
 ---
 
 ## **CIRCUIT DIAGRAM:**  
+![Screenshot 2025-03-12 212018](https://github.com/user-attachments/assets/36ce09c5-0b44-4ad5-901b-a19ab64d95a9)
+
 ### **Connections:**  
 
 | DHT22 Pin | Raspberry Pi Pico Pin |
